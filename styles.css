@@ -192,7 +192,6 @@ h2{
 
 .page-three{
    color: white;
-   font-size: 1.3em;
 }
 
 .page-four .title,
@@ -209,9 +208,14 @@ q{
    background: #ffffff24;
 }
 
+.page-three,
+.page-four{
+   padding-bottom: 24px;
+   font-size: 1.3em;
+}
+
 /* Page four */
 .page-four{
-   font-size: 1.3em;
    color: var(--secondary-color);
 }
 
@@ -264,6 +268,11 @@ footer p{
    #dedicatoria{
       justify-content: center;
       flex-direction: column;
+   }
+
+   .page-four,
+   .page-three{
+      font-size: 1.5em;
    }
 
    #referencias li {
