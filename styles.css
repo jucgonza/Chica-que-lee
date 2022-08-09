@@ -1,0 +1,277 @@
+:root{
+   --main-color: salmon;
+   --secondary-color: #353643;
+}
+
+body{
+   margin: 0;
+   padding: 0;
+   font-family: 'Edu QLD Beginner', cursive;
+   font-size: 16px;
+}
+
+h2{
+   font-size: 2em;
+}
+
+.main-color{
+   background: var(--main-color);
+}
+.secondary-color{
+   background: var(--secondary-color);
+}
+
+.title{
+   font-family: 'Petit Formal Script', cursive;
+   margin: 0;
+}
+
+.title-fullscreen{
+   font-size: 4.5em;
+   text-align: center;
+}
+
+.container{
+   width: 80%;
+   max-width: 1120px;
+   margin: 0 auto;
+}
+
+.page{
+   width: 100%;
+   min-height: 100vh;
+}
+
+.page-one{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.page-one .title{
+   color: white;
+}
+
+.dot{
+   animation-timing-function: ease-in;
+   animation-iteration-count: infinite;
+   animation-duration: 1.5s;
+}
+
+.dot:nth-of-type(1){ animation-name: first-dot }
+.dot:nth-of-type(2){ animation-name: second-dot }
+.dot:nth-of-type(3){ animation-name: third-dot }
+
+@keyframes first-dot{
+   0%{ opacity: 0 }
+   30%{ opacity: 1 }
+}
+
+@keyframes second-dot{
+   0%, 30%{ opacity: 0 }
+   60%{ opacity: 1 }
+}
+
+@keyframes third-dot{
+   0%, 60%{ opacity: 0 }
+   90%{ opacity: 1 }
+}
+
+.page-one{
+   position: relative;
+}
+
+.page-one::after{
+   content: "";
+   position: absolute;
+   bottom: 1em;
+   left: 50%;
+   transform: translateX(-50%);
+
+   border: 3px solid white;
+   width: 2em;
+   height: 4em;
+   border-radius: 1em;
+}
+
+.page-one::before{
+   content: "";
+   position: absolute;
+   bottom: 2em;
+   left: 50%;
+   transform: translateX(-50%);
+   
+
+   width: 1em;
+   height: 1em;
+   border-radius: 50%;
+   background-color: white;
+
+   animation-name: scroll-down-mouse;
+   animation-iteration-count: infinite;
+   animation-duration: 1.3s;
+   animation-timing-function: ease-in;
+}
+
+@keyframes scroll-down-mouse {
+   0%, 100%{
+      bottom: 2em
+   }
+   90%{
+      bottom: 4em;
+   }
+}
+
+/* Page two */
+.page-two{
+   display: flex;
+   align-items: center;
+}
+
+.page-two .title{
+   color: white;
+   line-height: 1.5em;
+}
+
+#dedicatoria{
+   height: 100%;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 24px;
+   padding: 24px 0;
+}
+
+#dedicatoria .panel-left{
+   max-width: 350px;
+}
+
+#dedicatoria .panel-right{
+   display: flex;
+   align-items: center;
+   border-radius: 4px;
+   overflow: hidden;
+
+   box-shadow: 2px 1px 8px #242424;
+   background: white;
+   color: var(--secondary-color);
+}
+
+#dedicatoria .de-para{
+   padding: 24px 20px;
+   flex: 1 1 auto;
+   font-size: 1.3em;
+}
+
+.de-para p:first-of-type{
+   margin-top: 0;
+}
+
+.de-para p:last-of-type{
+   margin: 0;
+}
+
+#dedicatoria .de-para .nombre{
+   font-weight: 700;
+}
+
+#dedicatoria .img-libro{
+   width: 50%;
+   flex-shrink: 0;
+}
+
+#dedicatoria .img-libro img{
+   display: block;
+   width: 100%;
+   min-height: 220px;
+   max-height: 350px;
+}
+
+/* Page three */
+
+.page-three{
+   color: white;
+   font-size: 1.3em;
+}
+
+.page-four .title,
+.page-three .title{
+   padding: 40px 0 20px;
+}
+
+
+.page-three p{
+   line-height: 1.7em;
+}
+
+q{
+   background: #ffffff24;
+}
+
+/* Page four */
+.page-four{
+   font-size: 1.3em;
+   color: var(--secondary-color);
+}
+
+#referencias ul{
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+#referencias .section-name{
+   font-weight: 700;
+}
+
+#referencias li{
+   margin: 15px 0 15px 5px;
+   display: flex;
+   gap: 16px;
+}
+
+#referencias li a{
+   text-decoration: none;
+   background-color: var(--main-color);
+   color: white;
+   padding: 6px 16px;
+   border-radius: 20px;
+   transition: background-color .3s;
+}
+
+#referencias li a:hover{
+   background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer p{
+   margin: 20px 0 10px;
+   text-align: center;
+   font-size: 14px;
+}
+
+/* Media screen small devices */
+@media screen and (max-width: 564px) {
+   body{
+      font-size: 14px;
+   }
+
+   .container{
+      width: 90%;
+   }
+
+   #dedicatoria{
+      justify-content: center;
+      flex-direction: column;
+   }
+
+   #referencias li {
+      flex-direction: column;
+      gap: 8px;
+   }
+
+   #referencias li a{
+      align-self: baseline;
+   }
+}
